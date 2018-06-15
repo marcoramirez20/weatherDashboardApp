@@ -1,0 +1,57 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div class="center" style="text-align:center">
+  <h1>
+    Weather app
+  </h1>
+
+
+  <span style="padding: 5px"> city:</span>
+  <select id="cities" #Id="ngModel" class="hideLabel form-control" [(ngModel)]="city" name="cities" (change)="update()">
+    <option [ngValue]="city" *ngFor="let city of cities">
+      {{city}}
+    </option>
+  </select>
+
+  <span style="padding: 5px"> api:</span>
+  <select id="apis" #Id="ngModel" class="hideLabel form-control" [(ngModel)]="api" name="apis" (change)="update()">
+    <option [ngValue]="api" *ngFor="let api of apis">
+      {{api}}
+    </option>
+  </select>
+
+  <span style="padding: 5px"> unit:</span>
+  <select id="units" #Id="ngModel" class="hideLabel form-control" [(ngModel)]="unit" name="units" (change)="update()">
+    <option [ngValue]="unit" *ngFor="let unit of units">
+      {{unit}}
+    </option>
+  </select>
+
+
+  <div class="main-container" *ngIf="whetherData">
+    <p>Right now in: </p>
+    <h3>{{whetherData.cityName}}</h3>
+    <p>current: {{whetherData.temperature}}º</p>
+    <p>min: {{whetherData.minTemperature}}º max: {{whetherData.maxTemperature}}º</p>
+    <p>{{whetherData.description}}</p>
+
+
+    <div id="list">
+      <ul>
+        <li *ngFor="let day of whetherData.dailyWeathers">
+          <p>{{day.dayOfWeek}}: {{day.description}}</p>
+          <p>min: {{day.minTemperature}} max: {{day.maxTemperature}}</p>
+
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="main-container" *ngIf="errorMessage">{{errorMessage}}</div>
+
+</div>
+
+
+
+
