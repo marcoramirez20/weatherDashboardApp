@@ -2,9 +2,9 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
-## Pasos para probar
-npm install
-npm start
+# Pasos para ejecutar y probar
+1) ejecutar npm install
+2) ejecutar npm start
 
 ## Development server
 
